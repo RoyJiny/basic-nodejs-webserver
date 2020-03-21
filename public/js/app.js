@@ -1,6 +1,5 @@
 //works only in client side javascript
 
-
 const weatherForm = document.querySelector('form');
 const input = document.querySelector('input');
 
@@ -12,7 +11,7 @@ weatherForm.addEventListener('submit', (e) => {
 
     const location = input.value;
 
-    fetch(`http://localhost:3000/weather?location=${encodeURIComponent(location)}`).then((response) => {
+    fetch(`/weather?location=${encodeURIComponent(location)}`).then((response) => {
         response.json().then((data) => {
             if(data.error){
                 errorMsg.textContent = data.error;
